@@ -23,7 +23,7 @@
         <%= submit_tag("Submit") %>
     <% end %> -->
 
-    <%= form_with model: @user do |form| %>
+    <!--<%= form_with model: @user do |form| %>
       <%= form.label :username, "username:" %>
       <%= form.text_field :username %><br><br>
       <%= form.label :email, "email:" %>
@@ -31,7 +31,9 @@
       <%= form.label :password, "password:" %>
       <%= form.text_field :password %><br><br>
       <%= form.submit "Submit" %>
-    <% end %>
+    <% end %> -->
+
+    <%= render partial: "form", locals: {user: @user} %>
 
   </body>  
 </html>
