@@ -1,4 +1,12 @@
 <%= form_with model: @user do |form| %>
+  <% if @user.errors.any? %>
+    <%= "Fix yer errors!" %>
+    <ul>
+      <% @user.errors.each do |error| %>
+        <li><%= error.full_message %></li>    
+      <% end %>
+    </ul>
+  <% end %>
   <%= form.label :username %>
   <%= form.text_field :username, placeholder: "John or Jane Doe" %><br><br>
   <%= form.label :email %>
